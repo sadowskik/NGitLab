@@ -65,9 +65,14 @@
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\FileDelete.cs" />
     <Compile Include="Models\FileUpsert.cs" />
+    <Compile Include="Models\Issue.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\MergeRequest.cs" />
     <Compile Include="Models\MergeRequestState.cs" />
+    <Compile Include="Models\Milestone.cs" />
     <Compile Include="Models\Namespace.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Models\ObjectType.cs" />
     <Compile Include="Models\PersonInfo.cs" />
     <Compile Include="Models\Project.cs" />
