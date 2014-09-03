@@ -45,9 +45,11 @@
     <Compile Include="IBranchClient.cs" />
     <Compile Include="IFilesClient.cs" />
     <Compile Include="IIssuesClient.cs" />
+    <Compile Include="IMilestoneClient.cs" />
     <Compile Include="Impl\API.cs" />
     <Compile Include="Impl\BranchClient.cs" />
     <Compile Include="Impl\IssuesClient.cs" />
+    <Compile Include="Impl\MilestoneClient.cs" />
     <Compile Include="Impl\ProjectHooksClient.cs" />
     <Compile Include="Impl\FileClient.cs" />
     <Compile Include="Impl\HttpRequestor.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Models\MergeRequest.cs" />
     <Compile Include="Models\MergeRequestState.cs" />
     <Compile Include="Models\Milestone.cs" />
+    <Compile Include="Models\MilestoneUpsert.cs" />
     <Compile Include="Models\Namespace.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\ObjectType.cs" />

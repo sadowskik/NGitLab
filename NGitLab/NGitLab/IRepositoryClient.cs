@@ -21,6 +21,8 @@ namespace NGitLab
 
 		IIssuesClient Issues { get; }
 
+		IMilestoneClient Milestones { get; }
+
         IProjectHooksClient ProjectHooks { get; }
     }
 }
