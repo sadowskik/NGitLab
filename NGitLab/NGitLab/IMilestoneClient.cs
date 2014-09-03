@@ -18,5 +18,9 @@ namespace NGitLab
 		void Create(Milestone milestone);
 
 		void Update(Milestone milestone);
+
+		void Close(Milestone milestone);
+
+		void Activate(Milestone milestone);
 	}
 }

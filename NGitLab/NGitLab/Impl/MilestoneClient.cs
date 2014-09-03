@@ -26,12 +26,12 @@
 
 		public void Create(Milestone milestone)
 		{
-			var upsert = new MilestoneUpsert()
+			var upsert = new MilestoneUpsert
 			{
 				Title = milestone.Title,
 				Description = milestone.Description,
 				DueDate = milestone.DueDate,
-				StateEvent = milestone.State,
+				//StateEvent = milestone.State,
 			};
 
 			_api.Post().With(upsert).Stream(_projectPath + "/" + Milestone.Url, s => { });
@@ -39,12 +39,32 @@
 
 		public void Update(Milestone milestone)
 		{
-			var upsert = new MilestoneUpsert()
+			var upsert = new MilestoneUpsert
 			{
 				Title = milestone.Title,
 				Description = milestone.Description,
 				DueDate = milestone.DueDate,
-				StateEvent = milestone.State,
+				//StateEvent = milestone.State,
+			};
+
+			_api.Put().With(upsert).Stream(_projectPath + "/" + Milestone.Url + "/" + milestone.Id, s => { });
+		}
+
+		public void Close(Milestone milestone)
+		{
+			var upsert = new MilestoneUpsert
+			{
+				StateEvent = "close",
+			};
+
+			_api.Put().With(upsert).Stream(_projectPath + "/" + Milestone.Url + "/" + milestone.Id, s => { });
+		}
+
+		public void Activate(Milestone milestone)
+		{
+			var upsert = new MilestoneUpsert
+			{
+				StateEvent = "activate",
 			};
 
 			_api.Put().With(upsert).Stream(_projectPath + "/" + Milestone.Url + "/" + milestone.Id, s => { });
