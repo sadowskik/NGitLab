@@ -27,6 +27,12 @@ namespace NGitLab.Impl
 			_projectPath = string.Format("/projects/{0}/", _projectId);
 		}
 
+		public IssuesClient(API api, string projectPath)
+		{
+			_api = api;
+			_projectPath = projectPath;
+		}
+
 		#region IIssuesClient Members
 
 		public IEnumerable<Issue> All

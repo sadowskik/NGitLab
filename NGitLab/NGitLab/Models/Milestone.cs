@@ -7,9 +7,10 @@ namespace NGitLab.Models
 {
 	using System.Runtime.Serialization;
 
+	[DataContract]
 	public class Milestone
 	{
-		public new const string Url = "/projects/{id}/milestones";
+		public const string Url = "/milestones";
 
 		[DataMember(Name = "id")]
 		public int Id { get; set; }

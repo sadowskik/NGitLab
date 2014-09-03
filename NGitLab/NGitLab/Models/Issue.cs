@@ -8,6 +8,7 @@ namespace NGitLab.Models
 {
 	using System.Runtime.Serialization;
 
+	[DataContract]
 	public class Issue
 	{
 		public const string Url = "/issues";

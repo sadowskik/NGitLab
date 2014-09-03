@@ -7,6 +7,7 @@ namespace NGitLab.Models
 {
 	using System.Runtime.Serialization;
 
+	[DataContract]
 	public class Note
 	{
 		[DataMember(Name = "id")]

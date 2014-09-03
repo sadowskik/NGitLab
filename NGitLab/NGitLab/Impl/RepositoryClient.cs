@@ -59,7 +59,12 @@ namespace NGitLab.Impl
             get { return new BranchClient(_api, _repoPath); }
         }
 
-        public IProjectHooksClient ProjectHooks
+	    public IIssuesClient Issues
+	    {
+		    get { return new IssuesClient(_api, _projectPath);}
+	    }
+
+	    public IProjectHooksClient ProjectHooks
         {
             get { return new ProjectHooksClient(_api, _projectPath); }
         }
