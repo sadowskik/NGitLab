@@ -1,10 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="IssuesClient.cs"  company="One Call Care Management, Inc.">
-// Copyright (c) One Call Care Management, Inc. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace NGitLab.Impl
+﻿namespace NGitLab.Impl
 {
 	#region Using
 
@@ -57,14 +51,52 @@ namespace NGitLab.Impl
 
 		public void Create(Issue issue)
 		{
-			_api.Post().With(issue).Stream(_projectPath + "/" + Issue.Url, s => { });
+			var upsert = new IssueUpsert
+			{
+				Title = issue.Title,
+				Description = issue.Description,
+				AssigneeId = issue.Assignee != null ? issue.Assignee.Id : 0,
+				MilestoneId = issue.Assignee != null ? issue.Milestone.Id : 0,
+				Labels = string.Join(",", issue.Labels)
+			};
+
+			_api.Post().With(upsert).Stream(_projectPath + "/" + Issue.Url, s => { });
 		}
 
 		public void Update(Issue issue)
 		{
-			_api.Put().With(issue).Stream(_projectPath + "/" + Issue.Url, s => { });
+			var upsert = new IssueUpsert
+			{
+				Id = issue.Id,
+				Title = issue.Title,
+				Description = issue.Description,
+				AssigneeId = issue.Assignee != null ? issue.Assignee.Id : 0,
+				MilestoneId =  issue.Assignee != null ? issue.Milestone.Id : 0,
+				Labels = string.Join(",", issue.Labels)
+			};
+
+			_api.Put().With(upsert).Stream(_projectPath + "/" + Issue.Url + "/" + issue.Id, s => { });
 		}
 
+		public void Close(Issue issue)
+		{
+			var upsert = new IssueUpsert
+			{
+				State = "close"
+			};
+			_api.Put().With(upsert).Stream(_projectPath + "/" + Issue.Url + "/" + issue.Id, s => { });
+		}
+
+		public void ReOpen(Issue issue)
+		{
+			var upsert = new IssueUpsert
+			{
+				State = "reopen"
+			};
+			_api.Put().With(upsert).Stream(_projectPath + "/" + Issue.Url + "/" + issue.Id, s => { });
+		}
+
+		[Obsolete("Delete is deprecated, close issue with Close method.")]
 		public void Delete(int id)
 		{
 			_api.Delete().With(this[id]).Stream(_projectPath + "/" + Issue.Url, s => { });

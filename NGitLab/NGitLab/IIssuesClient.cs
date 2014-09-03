@@ -19,6 +19,8 @@ namespace NGitLab
 
 		void Create(Issue issue);
 		void Update(Issue issue);
+		void Close(Issue issue);
+		void ReOpen(Issue issue);
 		void Delete(int id);
 		void AddComment(int issueId, Note note);
 	}

@@ -70,6 +70,7 @@
     <Compile Include="Models\Issue.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\IssueUpsert.cs" />
     <Compile Include="Models\MergeRequest.cs" />
     <Compile Include="Models\MergeRequestState.cs" />
     <Compile Include="Models\Milestone.cs" />
