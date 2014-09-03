@@ -44,8 +44,10 @@
     <Compile Include="GitLabClient.cs" />
     <Compile Include="IBranchClient.cs" />
     <Compile Include="IFilesClient.cs" />
+    <Compile Include="IIssuesClient.cs" />
     <Compile Include="Impl\API.cs" />
     <Compile Include="Impl\BranchClient.cs" />
+    <Compile Include="Impl\IssuesClient.cs" />
     <Compile Include="Impl\ProjectHooksClient.cs" />
     <Compile Include="Impl\FileClient.cs" />
     <Compile Include="Impl\HttpRequestor.cs" />
