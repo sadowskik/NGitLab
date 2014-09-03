@@ -1246,7 +1246,8 @@ namespace NGitLab.Impl
         {
             @"yyyy-MM-dd\THH:mm:ss.FFFFFFF\Z",
             @"yyyy-MM-dd\THH:mm:ss\Z",
-            @"yyyy-MM-dd\THH:mm:ssK"
+            @"yyyy-MM-dd\THH:mm:ssK",
+			@"yyyy-MM-dd"
         };
 
         public PocoJsonSerializerStrategy()
