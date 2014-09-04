@@ -50,6 +50,7 @@
     <Compile Include="Impl\BranchClient.cs" />
     <Compile Include="Impl\IssuesClient.cs" />
     <Compile Include="Impl\MilestoneClient.cs" />
+    <Compile Include="Impl\NotesClient.cs" />
     <Compile Include="Impl\ProjectHooksClient.cs" />
     <Compile Include="Impl\FileClient.cs" />
     <Compile Include="Impl\HttpRequestor.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Impl\ProjectClient.cs" />
     <Compile Include="Impl\RepositoryClient.cs" />
     <Compile Include="Impl\UserClient.cs" />
+    <Compile Include="INotesClient.cs" />
     <Compile Include="IProjectClient.cs" />
     <Compile Include="IProjectHooksClient.cs" />
     <Compile Include="IRepositoryClient.cs" />
