@@ -71,7 +71,7 @@
 				Title = issue.Title,
 				Description = issue.Description,
 				AssigneeId = issue.Assignee != null ? issue.Assignee.Id : 0,
-				MilestoneId =  issue.Assignee != null ? issue.Milestone.Id : 0,
+				MilestoneId = issue.Assignee != null ? issue.Milestone.Id : 0,
 				Labels = string.Join(",", issue.Labels)
 			};
 
@@ -104,7 +104,17 @@
 
 		public void AddComment(int issueId, Note note)
 		{
-			throw new NotImplementedException();
+			this.Notes(issueId).Create(note.Body);
+		}
+
+		public INotesClient Notes(Issue issue)
+		{
+			return Notes(issue.Id);
+		}
+
+		public INotesClient Notes(int issueId)
+		{
+			return new NotesClient(string.Format("{0}/issues/{1}/notes", _projectPath, issueId), _api);
 		}
 
 		#endregion

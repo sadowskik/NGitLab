@@ -23,5 +23,8 @@ namespace NGitLab
 		void ReOpen(Issue issue);
 		void Delete(int id);
 		void AddComment(int issueId, Note note);
+
+		INotesClient Notes(Issue issue);
+		INotesClient Notes(int issueId);
 	}
 }
