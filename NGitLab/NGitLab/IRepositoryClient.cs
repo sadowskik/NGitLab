@@ -19,6 +19,10 @@ namespace NGitLab
 
         IBranchClient Branches { get; }
 
+		IIssuesClient Issues { get; }
+
+		IMilestoneClient Milestones { get; }
+
         IProjectHooksClient ProjectHooks { get; }
     }
 }
